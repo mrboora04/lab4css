@@ -1,0 +1,88 @@
+/* Character encoding for proper display of characters */
+@charset "utf-8";
+
+/* Set the base font size and family for the document */
+html {
+  font: 120%/1.2 "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+/* Remove default table border spacing for a cleaner look */
+table {
+  border-collapse: collapse;
+  caption-side: top;
+  table-layout: auto;
+  width: 75%; /* Adjust width as needed */
+  margin: 0 auto; /* Center the table horizontally (optional) */
+}
+
+/* Style table cells (TD) and headers (TH) */
+td, th {
+  border: 1px solid black; /* Maintain the original border */
+  padding: 0.5em;
+  text-align: center; /* Adjust text alignment as needed */
+  position: relative; /* Required for pseudo-elements */
+}
+
+/* Lighter background color for headers */
+th {
+  background: rgba(225, 225, 225, 1);
+}
+
+/* Zebra striping for rows with a subtle opacity */
+tbody tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+/* Reduce font size for footer text */
+tfoot td {
+  font-size: 60%;
+}
+
+/* Increase font size for table caption */
+caption {
+  font-size: 150%;
+}
+
+/* Create subtle inner borders using pseudo-elements */
+td::before,
+td::after,
+th::before,
+th::after {
+  content: "";
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.25); /* Adjust opacity for subtle effect */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1; /* Place behind the cell content */
+}
+
+/* Style the pseudo-elements for desired borders */
+td::before {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 2px; /* Adjust width for desired border thickness */
+}
+
+td::after {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 2px; /* Adjust width for desired border thickness */
+}
+
+th::before {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px; /* Adjust height for desired border thickness */
+}
+
+th::after {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px; /* Adjust height for desired border thickness */
+}
